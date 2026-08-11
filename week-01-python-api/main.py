@@ -1,3 +1,4 @@
+import sys
 import requests
 
 
@@ -25,4 +26,9 @@ def get_github_user(username: str) -> None: # This function takes a GitHub usern
 
 
 #get_github_user("avinashk9911")
-get_github_user("This user does not exist 9900011")
+#get_github_user("This user does not exist 9900011")
+
+if len(sys.argv) != 2: # len(sys.argv) returns the number of command-line arguments passed to the script.
+    print("Usage: python main.py <github_username>") # If the number of arguments is not 2, print the usage message.
+else:
+    get_github_user(sys.argv[1]) # If the number of arguments is 2, get the GitHub username from the command-line argument and call the get_github_user function.
